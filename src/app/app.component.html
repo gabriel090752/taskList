@@ -1,0 +1,19 @@
+<div>
+  <div class="w-auto bg-red-900">
+    <h1 class="text-white text-4xl ml-5">Task List</h1>
+  </div>
+  <div class="w-48 mx-auto mt-64 justify-items-start">
+    <ul class="flex-col w-80 bg-red-900">
+      <li *ngFor="let task of tasks" class="flex w-full">
+        <input class="w-24 input-field" type="checkbox">
+        <span class="w-auto text-white">{{ task }}</span>
+      </li>
+    </ul>
+    <div class="flex w-96">
+      <form (ngSubmit)="onSubmit(taskInput.value)" class="absolute">
+        <input class="w-72 h-8" placeholder="Add tasks" #taskInput>
+        <button class="bg-red-800 w-8 h-8">!</button>
+      </form>
+    </div>
+  </div>
+</div>
